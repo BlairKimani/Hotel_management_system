@@ -35,7 +35,7 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 """
-ALLOWED_HOSTS = []#['192.168.1.100']
+ALLOWED_HOSTS = ["*",'hotel-management-system-2ao9.onrender.com']#['192.168.1.100']
 
 
 # Application definition
