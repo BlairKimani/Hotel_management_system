@@ -135,7 +135,8 @@ class Account:
             
         else:
             if Client.objects.filter(email=email).exists():
-                if Client.objects.filter(password=password).exists():
+                client = Client.objects.get(email=email)
+                if client.password == password:
                     return True
 
         return False
