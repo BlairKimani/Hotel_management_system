@@ -38,8 +38,8 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 """
-ALLOWED_HOSTS = ["localhost",'hotel-management-system-2ao9.onrender.com']#['192.168.1.100']
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'hotel-management-system-2ao9.onrender.com']
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS')
 
 # Application definition
 
