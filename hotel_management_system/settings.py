@@ -12,16 +12,19 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env()
 
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))    
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!%fx6m*rvprwwjrk)m&fp)76#_l_*9*1*9=)z+_7-@eed210o_'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -36,7 +39,7 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 """
 ALLOWED_HOSTS = ["localhost",'hotel-management-system-2ao9.onrender.com']#['192.168.1.100']
-CSRF_TRUSTED_ORIGINS = ['http://localhost']
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'hotel-management-system-2ao9.onrender.com']
 
 # Application definition
 
@@ -87,8 +90,12 @@ WSGI_APPLICATION = 'hotel_management_system.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'Database', 'Hotel_management_database.db'),
+        'ENGINE': env('DB_ENGINE'),
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT')
     }
 }
 
