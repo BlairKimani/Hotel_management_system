@@ -16,38 +16,33 @@
             <div class="details">
                 <div>
                     <label for="firstName">First Name:</label>
-                    <p>{{staff.first_name}}</p>
+                    <p>{{user.first_name}}</p>
                 </div>
                 <div>
                     <label for="lastName">Last Name:</label>
-                <p>{{staff.last_name}}</p>
+                <p>{{user.last_name}}</p>
                 </div>
                 <div>
                     <label for="gender">Gender</label>
-                   <p>{{staff.gender}}</p>
+                   <p>{{user.gender}}</p>
                 </div>
                 <div>
                     <label for="contact">Contact Number:</label>
-                  <p>+254 {{staff.contact}}</p>
+                  <p>+254 {{user.contact}}</p>
                 </div>
                 <div>
                     <label for="idNumber">ID Number:</label>
-                    <p>{{staff.id_no}}</p>
+                    <p>{{user.id_no}}</p>
                 </div>
                 <div>
                     <label for="Joining Date">Joining Date:</label>
-                   <p>{{staff.date_of_joining}}</p>
+                   <p>{{user.date_of_joining}}</p>
                 </div>
                 <div style="width: 100%;">
                     <label for="email">Email:</label>
-                  <p>{{staff.email}}</p>
+                  <p>{{user.email}}</p>
                 </div>
             </div>
-        </div>
-        <div class="unique-code">
-            <h3>Your Unique Code</h3>
-            <p id="unique-code">{{staff.code}}</p>
-            <div class="important-note">Please remember this code! It will be used for all your future bookings and services.</div>
         </div>
 
         <div class="section">
@@ -55,20 +50,11 @@
             <div class="details">
                 <div>
                     <label for="Role">Role:</label>
-                   <p>{{staff.role}}</p>
+                   <p>{{user.role}}</p>
                 </div>
                 <div>
                     <label for="Salary">Salary:</label>
-                    <p>Ksh {{staff.salary}}</p>
-                </div>
-               
-                <div>
-                    <label for="shiftstart">Shift Start:</label>
-                   <p>{{staff.shift_start}}</p>
-                </div>
-                <div>
-                    <label for="Shiftend">Shift End:</label>
-                    <p>{{staff.shift_end}}</p>
+                    <p>Ksh {{user.salary}}</p>
                 </div>
                
         </div>
@@ -82,7 +68,7 @@
                             <li class="request-item">
                                 <div class="request-details">
                                     <div class="request-title">Request {{service.request_id}}:       </div>
-                                    <div class="request-meta">{{service.service}}         </div>
+                                    <div class="request-meta">{{service.service__service_name}}         </div>
                                 </div>
                                 <button class="request-status status-pending">{{service.service_status}}</button>
                             </li>

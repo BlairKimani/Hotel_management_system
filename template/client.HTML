@@ -41,7 +41,7 @@
                         <img src="{% static 'images/'%}{{food.inventory_id}}.jpeg" alt="{{food.category}}: {{food.inventory_id}}">
                         <p>Was:<del>$10.00</del></p>
                         <p> Now:${{food.price_per_unit}}</p>
-                        <button class="book-button" onclick="bookRoom('{{client.client_id}}','{{food.inventory_id}}','{{food.price_per_unit}}', '4010')">Buy Now</button>
+                        <button class="book-button" onclick="orderFood('{{food.inventory_id}}','{{food.price_per_unit}}', '4010')">Buy Now</button>
                     </div>
                     {% endif %}
                 {% endfor %}
@@ -59,7 +59,7 @@
                     <img src="{% static 'images/'%}{{food.inventory_id}}.jpeg" alt="{{food.category}}: {{food.inventory_id}}">
                     <p>Was:<del>$10.00</del></p>
                     <p> Now:${{food.price_per_unit}}</p>
-                    <button class="book-button" onclick="bookRoom('{{client.client_id}}','{{food.inventory_id}}','{{food.price_per_unit}}', '4010')">Buy Now</button>
+                    <button class="book-button" onclick="orderFood('{{food.inventory_id}}','{{food.price_per_unit}}', '4010')">Buy Now</button>
                 </div>
                 {% endif %}
                 {% endfor %}
@@ -79,7 +79,7 @@
                             <img src="{% static 'images/'%}{{food.inventory_id}}.jpeg" alt="{{food.category}}: {{food.inventory_id}}">
                             <p>Was:<del>$10.00</del></p>
                             <p> Now:${{food.price_per_unit}}</p>
-                            <button class="book-button" onclick="bookRoom('{{client.client_id}}','{{food.inventory_id}}','{{food.price_per_unit}}', '4010')">Buy Now</button>
+                            <button class="book-button" onclick="orderFood('{{food.inventory_id}}','{{food.price_per_unit}}', '4010')">Buy Now</button>
                         </div>
                     {% endif %}
                 {% endfor %}
@@ -224,9 +224,18 @@
     <script>
          // Show popup to book the room
          function bookRoom(client_id, id_no ,price, service) {
-            selectedRoomPrice = price;
-            selectedRoomid = id_no;
-            selectedclient = client_id;
+            selectedPrice = price;
+            selectedid = id_no;
+            type = "room";
+            selectedservice = service;
+            document.getElementById('payment-popup').style.display = 'flex';
+
+          }
+
+          function orderFood( id_no ,price, service) {
+            selectedPrice = price;
+            selectedid = id_no;
+            type = "food";
             selectedservice = service;
             document.getElementById('payment-popup').style.display = 'flex';
 
@@ -237,7 +246,7 @@
             const days = document.getElementById('days').value;
             total_days = days
             if (  days && days > 0) {
-              const total = selectedRoomPrice * days;
+              const total = selectedPrice * days;
               totalprice = total
               document.getElementById('payment-summary').innerHTML = `Total Payment: $${total}`;
               document.getElementById('payment-methods').style.display = 'flex';
@@ -273,7 +282,7 @@
         }
 
         function sendData() {
-            let myData = {'user_id' : selectedclient, 'id' : selectedRoomid, 'price' : totalprice, 'payment' : paymentmethod, 'service' : selectedservice, 'days' : total_days};
+            let myData = { 'id' : selectedid, 'type':type, 'price' : totalprice, 'payment' : paymentmethod, 'service' : selectedservice, 'days' : total_days};
             fetch('/api/process-data/', {
                 method: "POST",
                 headers: {

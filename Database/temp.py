@@ -335,3 +335,28 @@ insert_invent(food)
 #insert_staff(data)
 #insert_Room(rooms)
 #insert_service(services)
+####################################
+#postgres
+####################################
+
+for dat in data:
+        service= models.Service.objects.get(service_id=dat[-1])
+        user = User(username=f'{dat[1]}{dat[2]}', first_name=dat[1], last_name=dat[2], is_staff=True, is_active=True, email=dat[5], contact=str(dat[3]), gender=dat[11], salary=dat[7], role=dat[6], id_no=dat[4], service=service)
+        user.set_password(dat[-3])
+        user.save()
+
+for serve in services:
+        print(serve[3])
+        service=models.Service(service_id=serve[0], service_name=serve[1], service_description=serve[2], service_price=serve[3])
+        service.save()
+
+for room_data in rooms:
+     room = models.Room(room_id=room_data[0], room_type=room_data[1], bed_type=room_data[2], price_per_night=room_data[3], availabilty_status=room_data[4], max_occupation=room_data[5])
+     room.save()
+    
+for food_data in foods:
+     food = models.Inventory(inventory_id=food_data[0], item_name=food_data[1], category=food_data[2], service_time=food_data[3], item_description=food_data[4], quantity=food_data[5], price_per_unit=food_data[6])
+     food.save()
+
+user = User(is_superuser=True, username='admin', first_name='admin', last_name='admin', email='admin@havenhub.com',contact='543232424', gender='unique', id_no=5462323)
+user.set_password('@dmin12345')
