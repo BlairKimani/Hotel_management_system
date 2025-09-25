@@ -85,11 +85,13 @@ def process_data(request):
         service = models.Service.objects.get(service_id=int(data['service']))
         if data['type'] == 'room':
             room = models.Room.objects.get(room_id=data['id'])
+            room.availabilty_status = 0
+            room.save()
             checkout = str(dt.date.today + dt.timedelta(days=data['days']))
             booking = models.Booking(user=user, room=room, check_out_date=checkout, number_of_guests=1, total_price=data['price'])
             booking.save()
 
-            request = models.ServiceRequest(user=user, booking=booking, service=service)
+            request = models.ServiceRequest(user=user, booking=booking, service=service, request_status='active')
             request.save()
             payment = models.Payment(user=user, booking=booking, service=service, amount=data['price'], payment_mode=data['payment'])
             payment.save()
