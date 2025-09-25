@@ -40,9 +40,9 @@ def Login(request):
                 return redirect('staff')
             else:
                 return redirect('client')
-        return render(request, 'login.HTML', {'message': {'msgbool': 1}})
+        return render(request, 'login.html', {'message': {'msgbool': 1}})
     else:
-        return render(request, 'login.HTML', {'message': {'msgbool': 0}})
+        return render(request, 'login.html', {'message': {'msgbool': 0}})
 
 #function loads the forgot password page
 def Forgot_password(request):
