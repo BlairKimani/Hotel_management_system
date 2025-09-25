@@ -34,17 +34,15 @@ def Login(request):
         Uuser = get_user_model()
 
         user = authenticate(request, email=request.POST['email'], password=request.POST['password'])
-        print('hello', request.POST['email'], request.POST['password'])
         if user != None:
-            print('hello')
             login(request, user)
             if user.is_staff:
                 return redirect('staff')
             else:
                 return redirect('client')
-        return render(request, 'Login.HTML', {'message': {'msgbool': 1}})
+        return render(request, 'login.HTML', {'message': {'msgbool': 1}})
     else:
-        return render(request, 'Login.HTML', {'message': {'msgbool': 0}})
+        return render(request, 'login.HTML', {'message': {'msgbool': 0}})
 
 #function loads the forgot password page
 def Forgot_password(request):
