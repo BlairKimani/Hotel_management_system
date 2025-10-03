@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Page</title>
+    <link rel="stylesheet" href="clients.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">haven<span>hub</span></div>
+        <ul>
+
+            <li><a href="#meals" >Meals</a></li>
+            <li><a href="#rooms" >Rooms</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <button id="mypin" onclick="showAlert(2322)">get Pin</button>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1 id="hotelname">welcome to Haven <span>Hub</span></h1>
+        <p class="description">At Haven <span>hub</span> ,we believe that every stay should be seamless <br>,comfortable and tailored to your needs. <br>Whether you are booking a cozy room foe relaxing getaway <br> or resrving a delicious meal ,we make the process <br> simple and stress free.Explore our options <br>customize your experience an dlet us take care of the rest. <br>Your perfect stay starts here  </p>
+    </div>
+
+    <!-- Meals Section -->
+    <section id="meals">
+        <h2>Meals section</h2>
+        <div class="category">
+            <h3>Breakfast</h3>
+            <div class="meal-grid">
+                <!-- Breakfast images (10 images) -->
+                <div class="meal">
+                    <img src="images\breakfast (1).jpeg" alt="Breakfast 1">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.50</p>
+                    <button class="book-button" onclick="bookRoom(7.50)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\breakfast (2).jpeg" alt="Breakfast 2">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.20</p>
+                    <button class="book-button" onclick="bookRoom(7.20)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\breakfast(3).jpeg" alt="Breakfast 3">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$6.60</p>
+                    <button class="book-button" onclick="bookRoom(6.600)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\breakfast (4).jpeg" alt="Breakfast 4">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.10</p>
+                    <button class="book-button" onclick="bookRoom(7.10)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\breakfast (5).jpeg" alt="Breakfast 5">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.98</p>
+                    <button class="book-button" onclick="bookRoom(7.98)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\breakfast (6).jpeg" alt="Breakfast 6">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.00</p>
+                    <button class="book-button" onclick="bookRoom(7.00)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\breakfast (7).jpeg" alt="Breakfast 7">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.80</p>
+                    <button class="book-button" onclick="bookRoom(7.80)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\breakfast (8).jpeg" alt="Breakfast 8">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.50</p>
+                    <button class="book-button" onclick="bookRoom(7.20)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\breakfast (9).jpeg" alt="Breakfast 9">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$6.90</p>
+                    <button class="book-button" onclick="bookRoom(6.90)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\breakfast (10).jpeg" alt="Breakfast 10">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$6.50</p>
+                    <button class="book-button" onclick="bookRoom(6.00)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\breakfast (11).jpeg" alt="Breakfast 11">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$8.10</p>
+                    <button class="book-button" onclick="bookRoom(8.10)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\breakfast(12).jpeg" alt="Breakfast 12">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.70</p>
+                    <button class="book-button" onclick="bookRoom(7.70)">Buy Now</button>
+                </div>
+                <!-- Repeat for remaining meals (up to 10) -->
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>Lunch</h3>
+            <div class="meal-grid">
+                <!-- Lunch images (10 images) -->
+                <div class="meal">
+                    <img src="images\lunch(1).jpeg" alt="Lunch 1">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.70</p>
+                    <button class="book-button" onclick="bookRoom(7.70)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\lunch (2).jpeg" alt="Lunch 2">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.50</p>
+                    <button>Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\lunch (3).jpeg" alt="Lunch 3">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.10</p>
+                    <button class="book-button" onclick="bookRoom(7.10)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\lunch(4).jpeg" alt="Lunch 4">
+                    
+                    <button>Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\lunch (5).jpeg" alt="Lunch 5">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.30</p>
+                    <button class="book-button" onclick="bookRoom(7.30)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\lunch (6).jpeg" alt="Lunch 6">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$6.50</p>
+                    <button class="book-button" onclick="bookRoom(6.50)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\lunch(7).jpeg" alt="Lunch 7">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$6.00</p>
+                    <button class="book-button" onclick="bookRoom(6.00)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\lunch(8).jpeg" alt="Lunch 8">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$8.20</p>
+                    <button class="book-button" onclick="bookRoom(8.20)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\lunch (9).jpeg" alt="Lunch 9">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$6.50</p>
+                    <button class="book-button" onclick="bookRoom(6.50)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\lunch (10).jpeg" alt="Breakfast 10">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$5.55</p>
+                    <button class="book-button" onclick="bookRoom(5.50)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\lunch(11).jpeg" alt="Breakfast 11">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$6.87</p>
+                    <button class="book-button" onclick="bookRoom(6.78)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\lunch (12).jpeg" alt="Breakfast 12">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.85</p>
+                    <button class="book-button" onclick="bookRoom(7.85)">Buy Now</button>
+                </div>
+
+                <!-- Repeat for remaining meals (up to 10) -->
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>Dinner</h3>
+            <div class="meal-grid">
+                <!-- Dinner images (10 images) -->
+                <div class="meal">
+                    <img src="images\dinner (1).jpeg" alt="Dinner 1">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.50</p>
+                    <button class="book-button" onclick="bookRoom(7.70)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\dinner(2).jpeg" alt="Dinner 2">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$6.30</p>
+                    <button class="book-button" onclick="bookRoom(6.30)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\dinner (3).jpeg" alt="Dinner 3">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$8.10</p>
+                    <button class="book-button" onclick="bookRoom(8.10)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\dinner (4).jpeg" alt="Dinner 4">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$6.10</p>
+                    <button class="book-button" onclick="bookRoom(6.10)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\dinner(5).jpeg" alt="Dinner 5">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.30</p>
+                    <button class="book-button" onclick="bookRoom(7.30)">Buy Now</button>
+                </div>
+                
+                <div class="meal">
+                    <img src="images\dinner(6).jpeg" alt="Dinner 6">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$8.50</p>
+                    <button class="book-button" onclick="bookRoom(8.50)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\dinner(6).jpeg" alt="Dinner 7">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.70</p>
+                    <button class="book-button" onclick="bookRoom(7.70)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\dinner(8).jpeg" alt="Dinner 8">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$5.30</p>
+                    <button class="book-button" onclick="bookRoom(5.30)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\dinner (9).jpeg" alt="Dinner 9">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$6.88</p>
+                    <button class="book-button" onclick="bookRoom(6.88)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\dinner(10).jpeg" alt="Dinner 10">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.00</p>
+                    <button class="book-button" onclick="bookRoom(7.00)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\dinner(11).jpeg" alt="Dinner 11">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$6.60</p>
+                    <button class="book-button" onclick="bookRoom(6.60)">Buy Now</button>
+                </div>
+                <div class="meal">
+                    <img src="images\dinner(12).jpeg" alt="Dinner 12">
+                    <p>Was:<del>$10.00</del></p>
+                    <p> Now:$7.50</p>
+                    <button class="book-button" onclick="bookRoom(7.50)">Buy Now</button>
+                </div>
+
+                <!-- Repeat for remaining meals (up to 10) -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms">
+        <h2>Rooms section</h2>
+        <div class="category">
+            <h3>Single Rooms</h3>
+            <div class="room-grid">
+                <!-- Single rooms images (10 images) -->
+                <div class="room">
+                    <img src="images\download (5).jpeg" alt="Single Room 1">
+                    <p>Was:<del>$20.00</del></p>
+                    <p> Now:$16.50</p>
+                    <button class="book-button" onclick="bookRoom(16.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\download (2).jpeg" alt="Single Room 2">
+                    <p>Was:<del>$20.00</del></p>
+                    <p> Now:$16.50</p>
+                    <button class="book-button" onclick="bookRoom(16.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\download (3).jpeg" alt="Single Room 3">
+                    <p>Was:<del>$20.00</del></p>
+                    <p> Now:$16.50</p>
+                    <button class="book-button" onclick="bookRoom(16.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\download (2).jpeg" alt="Single Room 4">
+                    <p>Was:<del>$20.00</del></p>
+                    <p> Now:$16.50</p>
+                    <button class="book-button" onclick="bookRoom(16.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\download (5).jpeg" alt="Single Room 5">
+                    <p>Was:<del>$20.00</del></p>
+                    <p> Now:$16.50</p>
+                    <button class="book-button" onclick="bookRoom(16.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\download (6).jpeg" alt="Single Room 6">
+                    <p>Was:<del>$20.00</del></p>
+                    <p> Now:$16.50</p>
+                    <button class="book-button" onclick="bookRoom(16.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\download (7).jpeg" alt="Single Room 7">
+                    <p>Was:<del>$20.00</del></p>
+                    <p> Now:$16.50</p>
+                    <button class="book-button" onclick="bookRoom(16.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\download (8).jpeg" alt="Single Room 8">
+                    <p>Was:<del>$20.00</del></p>
+                    <p> Now:$16.50</p>
+                    <button class="book-button" onclick="bookRoom(16.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\download (9).jpeg" alt="Single Room 9">
+                    <p>Was:<del>$20.00</del></p>
+                    <p> Now:$16.50</p>
+                    <button class="book-button" onclick="bookRoom(16.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\download (5).jpeg" alt="Single Room 10">
+                    <p>Was:<del>$20.00</del></p>
+                    <p> Now:$16.50</p>
+                    <button class="book-button" onclick="bookRoom(16.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\download (7).jpeg" alt="Single Room 11">
+                    <p>Was:<del>$20.00</del></p>
+                    <p> Now:$16.50</p>
+                    <button class="book-button" onclick="bookRoom(16.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\download (7).jpeg" alt="Single Room 12">
+                    <p>Was:<del>$20.00</del></p>
+                    <p> Now:$16.50</p>
+                    <button class="book-button" onclick="bookRoom(16.50)">Book Now</button>
+                </div>
+
+                <!-- Repeat for remaining rooms (up to 10) -->
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>Bedsitters</h3>
+            <div class="room-grid">
+                <!-- Bedsitter images (10 images) -->
+                <div class="room">
+                    <img src="images\bedistter (1).jpeg" alt="Bedsitter 1">
+                    <p>Was:<del>$25.00</del></p>
+                    <p> Now:$21.50</p>
+                    <button class="book-button" onclick="bookRoom(21.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\bedsitter (2).jpeg" alt="Bedsitter 2">
+                    <p>Was:<del>$25.00</del></p>
+                    <p> Now:$21.50</p>
+                    <button class="book-button" onclick="bookRoom(21.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\bedsitter (3).jpeg" alt="Bedsitter 3">
+                    <p>Was:<del>$25.00</del></p>
+                    <p> Now:$21.50</p>
+                    <button class="book-button" onclick="bookRoom(21.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\bedsitter(4).jpeg" alt="Bedsitter 4">
+                    <p>Was:<del>$25.00</del></p>
+                    <p> Now:$21.50</p>
+                    <button class="book-button" onclick="bookRoom(21.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\bedsitter (5).jpeg" alt="Bedsitter 5">  
+                    <p>Was:<del>$25.00</del></p>
+                    <p> Now:$21.50</p>
+                    <button class="book-button" onclick="bookRoom(21.50)">Book Now</button>
+                </div>
+                <div class="room"> <br>
+                    <img src="images\bedsitter (6).jpeg" alt="Bedsitter 6"> 
+                    <p>Was:<del>$25.00</del></p>
+                    <p> Now:$21.50</p>
+                    <button class="book-button" onclick="bookRoom(21.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\bedsitter(8).jpeg" alt="Bedsitter 7">
+                    <p>Was:<del>$25.00</del></p>
+                    <p> Now:$21.50</p>
+                    <button class="book-button" onclick="bookRoom(21.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\bedsitter (9).jpeg" alt="Bedsitter 8">
+                    <p>Was:<del>$25.00</del></p>
+                    <p> Now:$21.50</p>
+                    <button class="book-button" onclick="bookRoom(21.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\bedsitter (6).jpeg" alt="Bedsitter 9">
+                    <p>Was:<del>$25.00</del></p>
+                    <p> Now:$21.50</p>
+                    <button class="book-button" onclick="bookRoom(21.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\bedsitter(10).jpeg" alt="Bedsitter 10">
+                    <p>Was:<del>$25.00</del></p>
+                    <p> Now:$21.50</p>
+                    <button class="book-button" onclick="bookRoom(21.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\bedsitter (9).jpeg" alt="Bedsitter 11">
+                    <p>Was:<del>$25.00</del></p>
+                    <p> Now:$21.50</p>
+                    <button class="book-button" onclick="bookRoom(21.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\bedsitter (9).jpeg" alt="Bedsitter 12">
+                    <p>Was:<del>$25.00</del></p>
+                    <p> Now:$21.50</p>
+                    <button class="book-button" onclick="bookRoom(21.50)">Book Now</button>
+                </div>
+                <!-- Repeat for remaining rooms (up to 10) -->
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>One Bedroom</h3>
+            <div class="room-grid">
+                <!-- One Bedroom images (10 images) -->
+                <div class="room">
+                    <img src="images\oneb(1).jpeg"alt="One Bedroom 1">
+                    <p>Was:<del>$28.00</del></p>
+                    <p> Now:$24.50</p>
+                    <button class="book-button" onclick="bookRoom(24.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\oneb (2).jpeg" alt="One Bedroom 2">
+                    <p>Was:<del>$28.00</del></p>
+                    <p> Now:$24.50</p>
+                    <button class="book-button" onclick="bookRoom(24.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\oneb(3).jpeg" alt="One Bedroom 3">
+                    <p>Was:<del>$28.00</del></p>
+                    <p> Now:$24.50</p>
+                    <button class="book-button" onclick="bookRoom(24.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\oneb (4).jpeg" alt="One Bedroom 4">
+                    <p>Was:<del>$28.00</del></p>
+                    <p> Now:$24.50</p>
+                    <button class="book-button" onclick="bookRoom(24.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\oneb (5).jpeg" alt="One Bedroom 5">
+                    <p>Was:<del>$28.00</del></p>
+                    <p> Now:$24.50</p>
+                    <button class="book-button" onclick="bookRoom(24.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\oneb (6).jpeg" alt="One Bedroom 6">
+                    <p>Was:<del>$28.00</del></p>
+                    <p> Now:$24.50</p>
+                    <button class="book-button" onclick="bookRoom(24.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\oneb (7).jpeg" alt="One Bedroom 7">
+                    <p>Was:<del>$28.00</del></p>
+                    <p> Now:$24.50</p>
+                    <button class="book-button" onclick="bookRoom(24.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\oneb(8).jpeg" alt="One Bedroom 8">
+                    <p>Was:<del>$28.00</del></p>
+                    <p> Now:$24.50</p>
+                    <button class="book-button" onclick="bookRoom(24.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\oneb(9).jpeg" alt="One Bedroom 9">
+                    <p>Was:<del>$28.00</del></p>
+                    <p> Now:$24.50</p>
+                    <button class="book-button" onclick="bookRoom(24.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\oneb(10).jpeg" alt="One Bedroom 10">
+                    <p>Was:<del>$28.00</del></p>
+                    <p> Now:$24.50</p>
+                    <button class="book-button" onclick="bookRoom(24.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\oneb(10).jpeg" alt="One Bedroom 11">
+                    <p>Was:<del>$28.00</del></p>
+                    <p> Now:$24.50</p>
+                    <button class="book-button" onclick="bookRoom(24.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\oneb(10).jpeg" alt="One Bedroom 12">
+                    <p>Was:<del>$28.00</del></p>
+                    <p> Now:$24.50</p>
+                    <button class="book-button" onclick="bookRoom(24.50)">Book Now</button>
+                </div>
+                <!-- Repeat for remaining rooms (up to 10) -->
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>Two Bedrooms</h3>
+            <div class="room-grid">
+                <!-- Two Bedroom images (10 images) -->
+                <div class="room">
+                    <img src="images\2bedroom(1).jpeg" alt="Two Bedroom 1">
+                    <p>Was:<del>$30.00</del></p>
+                    <p> Now:$26.50</p>
+                    <button class="book-button" onclick="bookRoom(26.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\2bedroom (2).jpeg" alt="Two Bedroom 2">
+                    <p>Was:<del>$30.00</del></p>
+                    <p> Now:$26.50</p>
+                    <button class="book-button" onclick="bookRoom(26.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\2bedroom (3).jpeg" alt="Two Bedroom 3">
+                    <p>Was:<del>$30.00</del></p>
+                    <p> Now:$26.50</p>
+                    <button class="book-button" onclick="bookRoom(26.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\2bedroom(4).jpeg" alt="Two Bedroom 4">
+                    <p>Was:<del>$30.00</del></p>
+                    <p> Now:$26.50</p>
+                    <button class="book-button" onclick="bookRoom(26.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\2bedroom(5).jpeg" alt="Two Bedroom 5">
+                    <p>Was:<del>$30.00</del></p>
+                    <p> Now:$26.50</p>
+                    <button class="book-button" onclick="bookRoom(26.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\2bedroom(6).jpeg" alt="Two Bedroom 6">
+                    <p>Was:<del>$30.00</del></p>
+                    <p> Now:$26.50</p>
+                    <button class="book-button" onclick="bookRoom(26.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\2bedroom(7).jpeg" alt="Two Bedroom 7">
+                    <p>Was:<del>$30.00</del></p>
+                    <p> Now:$26.50</p>
+                    <button class="book-button" onclick="bookRoom(26.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\2bedroom (8).jpeg" alt="Two Bedroom 8">
+                    <p>Was:<del>$30.00</del></p>
+                    <p> Now:$26.50</p>
+                    <button class="book-button" onclick="bookRoom(26.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\2bedroom (9).jpeg" alt="Two Bedroom 9">
+                    <p>Was:<del>$30.00</del></p>
+                    <p> Now:$26.50</p>
+                    <button class="book-button" onclick="bookRoom(26.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\2bedroom (10).jpeg" alt="Two Bedroom 10">
+                    <p>Was:<del>$30.00</del></p>
+                    <p> Now:$26.50</p>
+                    <button class="book-button" onclick="bookRoom(26.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\2bedroom (2).jpeg" alt="Two Bedroom 11">
+                    <p>Was:<del>$30.00</del></p>
+                    <p> Now:$26.50</p>
+                    <button class="book-button" onclick="bookRoom(26.50)">Book Now</button>
+                </div>
+                <div class="room">
+                    <img src="images\2bedroom(5).jpeg" alt="Two Bedroom 12">
+                    <p>Was:<del>$30.00</del></p>
+                    <p> Now:$26.50</p>
+                    <button class="book-button" onclick="bookRoom(26.50)">Book Now</button>
+                </div>
+              
+                <!-- Repeat for remaining rooms (up to 10) -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us">
+        <h2>About Us</h2>
+        <p>We are a hospitality company that offers a variety of delicious meals and comfortable rooms. <br> Our mission is to provide excellent service to all our clients, ensuring that they have a memorable experience.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us through the following <br> social media plattforms</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank"><i id="facebook" class="fa-brands fa-facebook"></i> </a>
+            <a href="https://whatsapp.com" target="_blank"> <i id="whatsapp" class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://instagram.com" target="_blank"> <i id="instagram" class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank"> <i id="tiktok" class="fa-brands fa-tiktok"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i id="linkedin" class="fa-brands fa-linkedin"></i> </a>
+        </div>
+        <div class="quick-links">
+            <h1><strong>Quick Links</strong></h1> <br>
+            <a href="#meals">Meals</a target="_blank">
+            <a href="#rooms">Rooms</a target="_blank">
+            <a href="#aboutus">About Us</a target="_blank">
+            <a href="#contact">contact</a target="_blank">
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <p style="color: rgb(44, 55, 156); font-size:20px; ">&copy; 2025 <br> Haven Hub Hotels. <br> All rights reserved.</p>
+            
+        </div>
+    </section>
+      <!-- Popup to enter days and show payment -->
+      <div id="payment-popup" class="popup">
+        <div class="popup-content">
+          <h3>Enter Number of Days or quantity</h3>
+        
+          <input type="number" id="days" placeholder="Enter number of days or quantity" min="1">
+          
+          <button onclick="calculatePayment()">Calculate Payment</button>
+  
+          <div id="payment-summary" class="payment-summary"></div>
+  
+          <div id="payment-methods" class="payment-methods" style="display: none;">
+             
+            <button class="payment-method" onclick="choosePaymentMethod('Mpesa')">Mpesa</button>
+            <button class="payment-method" onclick="choosePaymentMethod('Bank Transfer')">Bank Transfer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+         // Show popup to book the room
+         function bookRoom(price) {
+            selectedRoomPrice = price;
+            document.getElementById('payment-popup').style.display = 'flex';
+          }
+      
+          // Calculate payment based on the number of days
+          function calculatePayment() {
+            const days = document.getElementById('days').value;
+            if (  days && days > 0) {
+              const total = selectedRoomPrice * days;
+              document.getElementById('payment-summary').innerHTML = `Total Payment: $${total}`;
+              document.getElementById('payment-methods').style.display = 'flex';
+            } else {
+              alert('Please enter a valid number of days .');
+            }
+          }
+          
+      
+          // Choose payment method (Mpesa or Bank Transfer)
+          function choosePaymentMethod(method) {
+            alert(`You have chosen ${method} as your payment method and your payment was successful.`);
+            document.getElementById('payment-popup').style.display = 'none';
+          }
+          
+        function showAlert(number) {
+            alert("Please remember this PIN " + number);
+        }
+        
+    </script>
+</body>
+
+</html>

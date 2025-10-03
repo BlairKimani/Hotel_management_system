@@ -1,0 +1,263 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accommodations — Haven Hub Hotels</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="{%static 'style.css'%}">
+  <link rel="stylesheet" href="{%static 'combined.css'%}">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">
+      <a href="{%url 'index'%}">
+      <img src="{%static 'images/'%}/logo.png" alt="Haven Hub Hotels">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="{%url 'index'%}">Home</a></li>
+      <li><a href="#">Accomodation</a></li>
+      <li><a href="{%url 'dining'%}">Dining</a></li>
+      <li><a href="{%url 'about'%}">About us</a></li>
+      <li><a href="{%url 'index'%}#contact">Contact</a></li>
+      {% if user.is_authenticated %}
+      <li><a href="{%url 'logout'%}" class="btn btn-primary">Logout</a></li>
+      {% else %}
+      <li><a href="{%url 'login'%}" class="btn btn-primary">Book Now</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+
+  <section class="section">
+    <h2>Luxury Accommodations</h2>
+    <div class="rooms-nav">
+      <a href="#single-rooms">Single Rooms</a>
+      <a href="#bedsitters">Bedsitters</a>
+      <a href="#one-bedroom">One Bedroom</a>
+      <a href="#two-bedroom">Two Bedrooms</a>
+    </div>
+
+    <!-- Single Rooms -->
+    <div class="category" id="single-rooms">
+      <h3>Single Rooms</h3>
+      <div class="card-grid">
+        {% for room in rooms %}
+          {%if room.room_type == 'Single' and room.availabilty_status == 1%}
+          <div class="card">
+            <img src="{% static 'images/'%}{{room.room_id}}.jpeg" alt="{{room.room_type}} {{room.room_id}}">
+            <div class="card-content">
+              <div class="price">
+                <span class="was">$20.00</span>
+                <span class="now">${{room.price_per_night}}</span>
+              </div>
+              {%if user.is_authenticated%}
+              <button class="btn-primary" onclick="bookRoom('{{client.client_id}}', '{{room.room_id}}','{{room.price_per_night}}', '4007')">Book Now</button>
+              {%else%}
+              <button class="btn-primary" onclick="Login()">Book Now</button>
+              {%endif%}
+            </div>
+          </div>
+          {%endif%}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Bedsitters -->
+    <div class="category" id="bedsitters">
+      <h3>Bedsitters</h3>
+      <div class="card-grid">
+        {% for room in rooms %}
+          {%if room.room_type == 'Bed Sitter' and room.availabilty_status == 1%}
+          <div class="card">
+            <img src="{% static 'images/'%}{{room.room_id}}.jpeg" alt="{{room.room_type}} {{room.room_id}}">
+            <div class="card-content">
+              <div class="price">
+                <span class="was">$25.00</span>
+                <span class="now">${{room.price_per_night}}</span>
+              </div>
+              {%if user.is_authenticated%}
+              <button class="btn-primary" onclick="bookRoom('{{client.client_id}}', '{{room.room_id}}','{{room.price_per_night}}', '4007')">Book Now</button>
+              {%else%}
+              <button class="btn-primary" onclick="Login()">Book Now</button>
+              {%endif%}
+            </div>
+          </div>
+          {%endif%}
+        {% endfor %}
+
+      </div>
+    </div>
+
+    <!-- One Bedroom -->
+    <div class="category" id="one-bedroom">
+      <h3>One Bedroom</h3>
+      <div class="card-grid">
+        {% for room in rooms %}
+          {%if room.room_type == 'One bedroom' and room.availabilty_status == 1%}
+          <div class="card">
+            <img src="{% static 'images/'%}{{room.room_id}}.jpeg" alt="{{room.room_type}} {{room.room_id}}">
+            <div class="card-content">
+              <div class="price">
+                <span class="was">$28.00</span>
+                <span class="now">${{room.price_per_night}}</span>
+              </div>
+              {%if user.is_authenticated%}
+              <button class="btn-primary" onclick="bookRoom('{{client.client_id}}', '{{room.room_id}}','{{room.price_per_night}}', '4007')">Book Now</button>
+              {%else%}
+              <button class="btn-primary" onclick="Login()">Book Now</button>
+              {%endif%}
+            </div>
+          </div>
+          {%endif%}
+        {% endfor %}
+
+      </div>
+    </div>
+
+    <!-- Two Bedrooms -->
+    <div class="category" id="two-bedroom">
+      <h3>Two Bedrooms</h3>
+      <div class="card-grid">
+        {% for room in rooms %}
+          {%if room.room_type == 'Two Bedroom' and room.availabilty_status == 1 %}
+          <div class="card">
+            <img src="{% static 'images/'%}{{room.room_id}}.jpeg" alt="{{room.room_type}} {{room.room_id}}">
+            <div class="card-content">
+              <div class="price">
+                <span class="was">$30.00</span>
+                <span class="now">${{room.price_per_night}}</span>
+              </div>
+              {%if user.is_authenticated%}
+              <button class="btn-primary" onclick="bookRoom('{{client.client_id}}', '{{room.room_id}}','{{room.price_per_night}}', '4007')">Book Now</button>
+              {%else%}
+              <button class="btn-primary" onclick="Login()">Book Now</button>
+              {%endif%}
+            </div>
+          </div>
+          {%endif%}
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Reusable Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Rooms &amp; Suites</a></li>
+            <li><a href="{%url 'dining'%}">Dining</a></li>
+            <li><a href="{%url 'about'%}">Amenities</a></li>
+            <li><a href="{%url 'index'%}#contact">Contact</a></li>
+          </ul>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://whatsapp.com" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025<br>Haven Hub Hotels.<br>All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  {% if user.is_authenticated %}
+  <!-- Popup -->
+  <div id="payment-popup" class="popup">
+    <div class="popup-content">
+      <h3>Enter Number of Days</h3>
+      <input type="number" id="days" placeholder="Days" min="1">
+      <button onclick="calculatePayment()">Calculate</button>
+      <div id="payment-summary"></div>
+      <div id="payment-methods" style="display:none;">
+        <button class="payment-method" onclick="choosePaymentMethod('Mpesa')">Mpesa</button>
+        <button class="payment-method" onclick="choosePaymentMethod('Bank Transfer')">Bank Transfer</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let selectedPrice, selectedid, type, selectedservice, totalprice, total_days, paymentmethod;
+
+    function bookRoom(client_id, id_no, price, service) {
+      selectedPrice = price;
+      selectedid = id_no;
+      type = "room";
+      selectedservice = service;
+      document.getElementById('payment-popup').style.display = 'flex';
+    }
+
+    function calculatePayment() {
+      const days = document.getElementById('days').value;
+      if (days && days > 0) {
+        total_days = days;
+        totalprice = selectedPrice * days;
+        document.getElementById('payment-summary').innerHTML = `Total: $${totalprice.toFixed(2)}`;
+        document.getElementById('payment-methods').style.display = 'flex';
+      } else {
+        alert('Please enter a valid number of days.');
+      }
+    }
+
+    function choosePaymentMethod(method) {
+      alert(`Payment via ${method} successful!`);
+      document.getElementById('payment-popup').style.display = 'none';
+      paymentmethod = method;
+      sendData();
+      window.location.reload();
+    }
+
+    function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                let cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    let cookie = cookies[i].trim();
+                    if (cookie.startsWith(name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        function sendData() {
+            let myData = { 'id' : selectedid, 'type':type, 'price' : totalprice, 'payment' : paymentmethod, 'service' : selectedservice, 'days' : total_days};
+            fetch('/api/process-data/', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": getCookie("csrftoken")  // ✅ Include CSRF token
+                },
+                body: JSON.stringify(myData)
+            }).catch(error => console.error("Error:", error));  // Ignore response
+        }
+
+        function showAlert(number) {
+            alert("Please remember this PIN " + number);
+        }
+  </script>
+  {%else%}
+  <script>
+    function Login(){
+      window.location.href = '{%url "login"%}'
+    }
+  </script>
+  {%endif%}
+</body>
+</html>

@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Profile - Hotel Management System</title>
+    <link rel="stylesheet" href="{% static 'staff.css' %}">
+</head>
+<body>
+    <div class="header">Staff Profile <br> <span style="font-size:16px; font-weight:normal;">Hotel Management System</span></div>
+
+    <div class="container">
+        <div class="section">
+            <h3>Personal Details</h3>
+            <div class="details">
+                <div>
+                    <label for="firstName">First Name:</label>
+                    <p>{{user.first_name}}</p>
+                </div>
+                <div>
+                    <label for="lastName">Last Name:</label>
+                <p>{{user.last_name}}</p>
+                </div>
+                <div>
+                    <label for="gender">Gender</label>
+                   <p>{{user.gender}}</p>
+                </div>
+                <div>
+                    <label for="contact">Contact Number:</label>
+                  <p>+254 {{user.contact}}</p>
+                </div>
+                <div>
+                    <label for="idNumber">ID Number:</label>
+                    <p>{{user.id_no}}</p>
+                </div>
+                <div>
+                    <label for="Joining Date">Joining Date:</label>
+                   <p>{{user.date_of_joining}}</p>
+                </div>
+                <div style="width: 100%;">
+                    <label for="email">Email:</label>
+                  <p>{{user.email}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Job Details</h3>
+            <div class="details">
+                <div>
+                    <label for="Role">Role:</label>
+                   <p>{{user.role}}</p>
+                </div>
+                <div>
+                    <label for="Salary">Salary:</label>
+                    <p>Ksh {{user.salary}}</p>
+                </div>
+               
+        </div>
+
+        <div class="section">
+            <h3>Service Requests</h3>
+            <div class="details">
+                <ul>
+                    {% for service in services %}
+                        {% if service.service_status == 'pending' %}
+                            <li class="request-item">
+                                <div class="request-details">
+                                    <div class="request-title">Request {{service.request_id}}:       </div>
+                                    <div class="request-meta">{{service.service__service_name}}         </div>
+                                </div>
+                                <button class="request-status status-pending">{{service.service_status}}</button>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+        </div>     
+        </div>
+    </div>
+</body>
+</html>

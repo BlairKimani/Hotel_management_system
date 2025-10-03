@@ -11,7 +11,7 @@ import json
 User = get_user_model()
 #funtion loads the home page
 def index(request):
-    return render(request, 'index.HTML')
+    return render(request, 'home.html')
 
 #function loads the Sign up page and sign in user
 def Register(request):
@@ -39,20 +39,23 @@ def Login(request):
             if user.is_staff:
                 return redirect('staff')
             else:
-                return redirect('client')
+                return redirect('index')
         return render(request, 'login.html', {'message': {'msgbool': 1}})
     else:
-        return render(request, 'login.html', {'message': {'msgbool': 0}})
+        return render(request, 'login.html ', {'message': {'msgbool': 0}})
 
+def Logout(request):
+    logout(request)
+    return redirect('index')
 #function loads the forgot password page
 def Forgot_password(request):
     if request.POST:
         code = request.POST['code']
         password = request.POST['password']
-        
-        user=User.objects.get(id_no=code)
-        user.set_password(password)
-        user.save()
+        if len(User.objects.filter(id_no=code)) > 0:
+            user=User.objects.get(id_no=code)
+            user.set_password(password)
+            user.save()
         return redirect('login')
     else:
         return render(request, 'forgot_pass.html')
@@ -74,7 +77,6 @@ def Client_fun(request):
         'rooms':rooms
     }
     return render(request, 'client.HTML', content)
-
 
 def process_data(request):
     if request.method == 'POST':
@@ -100,3 +102,20 @@ def process_data(request):
             payment.save()
         
         return JsonResponse({'status': 'error', 'message': 'Invalid request method.'})
+
+def Accomodation(request):
+    rooms = models.Room.objects.filter(availabilty_status=1)
+    content = {
+        'rooms':rooms
+    }
+    return render(request, 'accomodation.html', content)
+
+def Dining(request):
+    foods = models.Inventory.objects.all()
+    content = {
+        'foods':foods
+    }
+    return render(request, 'dining.html', content)
+
+def About(request):
+    return render(request, 'about.html')
