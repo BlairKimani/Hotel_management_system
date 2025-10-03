@@ -40,9 +40,9 @@ def Login(request):
                 return redirect('staff')
             else:
                 return redirect('index')
-        return render(request, 'login.html', {'message': {'msgbool': 1}})
+        return render(request, 'login.HTML', {'message': {'msgbool': 1}})
     else:
-        return render(request, 'login.html ', {'message': {'msgbool': 0}})
+        return render(request, 'login.HTML ', {'message': {'msgbool': 0}})
 
 def Logout(request):
     logout(request)
