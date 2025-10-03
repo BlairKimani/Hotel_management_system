@@ -42,7 +42,7 @@ def Login(request):
                 return redirect('index')
         return render(request, 'signin.html', {'message': {'msgbool': 1}})
     else:
-        return render(request, 'signin.html ', {'message': {'msgbool': 0}})
+        return render(request, 'signin.html', {'message': {'msgbool': 0}})
 
 def Logout(request):
     logout(request)
