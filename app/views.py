@@ -28,7 +28,7 @@ def Register(request):
     else:
         return render(request, 'Register.HTML', {'message': {'msgbool': 0}})
 
-#function loads the login page
+#function loads the login page 
 def Login(request):
     if request.method == 'POST':
         Uuser = get_user_model()
