@@ -32,7 +32,7 @@ class CustomUser(AbstractUser):
     salary = models.FloatField(blank=True, null=True, max_length=200)
     role = models.CharField(blank=True, null=True, max_length=200)
     service = models.ForeignKey('Service', models.DO_NOTHING, blank=True, null=True)
-    id_no = models.IntegerField(unique=True)  
+    id_no = models.IntegerField(unique=True, blank=True, null=True)  
 
     USERNAME_FIELD = 'email'         # Use email to log in
     REQUIRED_FIELDS = ['username']   # Required when creating superuser
