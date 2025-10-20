@@ -34,6 +34,7 @@ def Login(request):
         Uuser = get_user_model()
 
         user = authenticate(request, email=request.POST['email'], password=request.POST['password'])
+        print(user, request.POST['email'], request.POST['password'])
         if user != None:
             login(request, user)
             if user.is_staff:
