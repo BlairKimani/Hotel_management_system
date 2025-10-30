@@ -17,6 +17,9 @@
     <img src="{%static 'images/'%}logo.png" alt="Haven Hub Hotels">
   </a>
 </div>
+    {% if user.is_authenticated %}
+    Welcome {{user.first_name}} {{user.last_name}}
+    {% endif %}
     <ul class="nav-links">
       <li><a href="{%url 'index'%}">Home</a></li>
       <li><a href="{%url 'accomodation'%}">Accomodation</a></li>
@@ -47,21 +50,21 @@
       <h2>Our Accommodations</h2>
       <div class="card-grid">
         <div class="card">
-          <div class="card-image" style="background-image: url('{%static 'images/'%}/room1.jpg');"></div>
+          <div class="card-image" style="background-image: url('{%static 'images/'%}room1.jpg');"></div>
           <div class="card-content">
             <h3>Deluxe Suite</h3>
             <p>Spacious room with city view</p>
           </div>
         </div>
         <div class="card">
-          <div class="card-image" style="background-image: url('{%static 'images/'%}/room2.jpg');"></div>
+          <div class="card-image" style="background-image: url('{%static 'images/'%}room2.jpg');"></div>
           <div class="card-content">
             <h3>Executive Room</h3>
             <p>Premium comfort with lounge access</p>
           </div>
         </div>
         <div class="card">
-          <div class="card-image" style="background-image: url('{%static 'images/'%}/hotel.jpg');"></div>
+          <div class="card-image" style="background-image: url('{%static 'images/'%}hotel.jpg');"></div>
           <div class="card-content">
             <h3>Presidential Suite</h3>
             <p>Ultimate luxury experience</p>
@@ -116,21 +119,21 @@
       <h2>Exquisite Dining Experience</h2>
       <div class="card-grid">
         <div class="card">
-          <div class="card-image" style="background-image: url('{%static 'images/'%}/food1.jpg');"></div>
+          <div class="card-image" style="background-image: url('{%static 'images/'%}food1.jpg');"></div>
           <div class="card-content">
             <h3>Buffet &amp; Breakfast</h3>
             <p>Savour a diverse selection of international dishes</p>
           </div>
         </div>
         <div class="card">
-          <div class="card-image" style="background-image: url('{%static 'images/'%}/food3.jpg');"></div>
+          <div class="card-image" style="background-image: url('{%static 'images/'%}food3.jpg');"></div>
           <div class="card-content">
             <h3>Fine Dining Restaurant</h3>
             <p>Indulge in gourmet cuisine prepared by world-class chefs.</p>
           </div>
         </div>
         <div class="card">
-          <div class="card-image" style="background-image: url('{%static 'images/'%}/food2.jpg');"></div>
+          <div class="card-image" style="background-image: url('{%static 'images/'%}food2.jpg');"></div>
           <div class="card-content">
             <h3>Grill &amp; Steakhouse</h3>
             <p>Enjoy perfectly grilled steaks</p>
@@ -146,21 +149,21 @@
       <h2>Experience Unmatched Comfort and Luxury</h2>
       <div class="card-grid">
         <div class="card">
-          <div class="card-image" style="background-image: url('{%static 'images/'%}/lifestyle5.jpg');"></div>
+          <div class="card-image" style="background-image: url('{%static 'images/'%}lifestyle5.jpg');"></div>
           <div class="card-content">
             <h3>Chill and Unwind</h3>
             <p>Relax, refresh and completely feel rejuvenated</p>
           </div>
         </div>
         <div class="card">
-          <div class="card-image" style="background-image: url('{%static 'images/'%}/lifestyle7.jpg');"></div>
+          <div class="card-image" style="background-image: url('{%static 'images/'%}lifestyle7.jpg');"></div>
           <div class="card-content">
             <h3>Refresh and Unwind</h3>
             <p>Relax and unwind in our crystal-clear pool — your perfect retreat.</p>
           </div>
         </div>
         <div class="card">
-          <div class="card-image" style="background-image: url('{%static 'images/'%}/lifestyle3.jpg');"></div>
+          <div class="card-image" style="background-image: url('{%static 'images/'%}lifestyle3.jpg');"></div>
           <div class="card-content">
             <h3>Pure Tranquility</h3>
             <p>Breathe, unwind and embrace serenity in a conducive atmosphere</p>
