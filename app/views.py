@@ -16,14 +16,18 @@ def index(request):
 #function loads the Sign up page and sign in user
 def Register(request):
     if request.method == 'POST':
-        data = request.POST.copy()
-        data['username'] = data['first_name'] + data['last_name']
-        data['password1'], data['password2'] = data['password'],data['password']
-        User = get_user_model()
-        user = User(username=data['username'], first_name=data['first_name'], last_name=data['last_name'], email=data['email'], contact=data['contact'], id_no=data['id'], gender=data['gender'])
-        user.set_password(data['password'])
-        user.save()
-        return redirect('login')
+        try:
+            data = request.POST.copy()
+            data['username'] = data['first_name'] + data['last_name']
+            data['password1'], data['password2'] = data['password'],data['password']
+            User = get_user_model()
+            user = User(username=data['username'], first_name=data['first_name'], last_name=data['last_name'], email=data['email'], contact=data['contact'], id_no=data['id'], gender=data['gender'])
+            user.set_password(data['password'])
+            user.save()
+            return redirect('login')
+        except:
+            return render(request, 'Register.HTML', {'message': {'msgbool': 1}})
+
 
     else:
         return render(request, 'Register.HTML', {'message': {'msgbool': 0}})
