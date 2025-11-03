@@ -18,7 +18,7 @@
   </a>
 </div>
     {% if user.is_authenticated %}
-    Welcome {{user.first_name}} {{user.last_name}}
+    Welcome {{user.first_name}}
     {% endif %}
     <ul class="nav-links">
       <li><a href="{%url 'index'%}">Home</a></li>

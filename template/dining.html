@@ -17,6 +17,9 @@
       <img src="{%static 'images/'%}logo.png" alt="Haven Hub Hotels">
       </a>
     </div>
+    {% if user.is_authenticated %}
+    Welcome {{user.first_name}}
+    {% endif %}
     <ul class="nav-links">
       <li><a href="{%url 'index'%}">Home</a></li>
       <li><a href="{%url 'accomodation'%}">Accomodation</a></li>
