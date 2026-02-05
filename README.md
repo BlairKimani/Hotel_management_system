@@ -1,4 +1,4 @@
-<img width="1364" height="790" alt="hotel-food" src="https://github.com/user-attachments/assets/455ee914-4fa7-40a3-bc6f-932ff72c0234" /># HOTEL MANAGEMENT SYSTEM
+# HOTEL MANAGEMENT SYSTEM
 # REQUIREMENTS
 * Python 3
 * Python-django
