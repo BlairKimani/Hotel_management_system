@@ -1,4 +1,4 @@
-# HOTEL MANAGEMENT SYSTEM
+<img width="1364" height="790" alt="hotel-food" src="https://github.com/user-attachments/assets/455ee914-4fa7-40a3-bc6f-932ff72c0234" /># HOTEL MANAGEMENT SYSTEM
 # REQUIREMENTS
 * Python 3
 * Python-django
@@ -25,4 +25,15 @@ or you can double click on the Run.bat file to run the program
 4) type 'python manage.py runserver'
 5) copy the url shown in the command prompt e.g. 'http\\270.213.5000'
 6) paste the url to your brower (online/ offline) and run it
+
+# Sample Images
+
+Home:
+<img width="1363" height="1216" alt="hotel-home" src="https://github.com/user-attachments/assets/505aac77-09e3-4105-b026-2814613947fc" />
+
+Rooms:
+<img width="1355" height="813" alt="hotel-rooms" src="https://github.com/user-attachments/assets/7abe3ac6-37dd-4115-bf93-c97f33969f5a" />
+
+Foods:
+<img width="1364" height="790" alt="hotel-food" src="https://github.com/user-attachments/assets/51104ff1-f3c9-4f77-9d3a-8aec3d7a20a9" />
 
